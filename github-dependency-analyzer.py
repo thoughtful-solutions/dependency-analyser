@@ -40,6 +40,48 @@ def configure_anonymous_dulwich():
             print("Will fallback to git command line for cloning if needed")
 
 
+def extract_repo_description(repo_dir):
+    """Extract the description from the repository's README.md file."""
+    readme_paths = [
+        os.path.join(repo_dir, "README.md"),
+        os.path.join(repo_dir, "Readme.md"),
+        os.path.join(repo_dir, "readme.md")
+    ]
+    
+    for path in readme_paths:
+        if os.path.exists(path):
+            try:
+                with open(path, 'r', encoding='utf-8', errors='ignore') as f:
+                    content = f.read()
+                    
+                    # Look for "## Description" or similar sections
+                    for section_header in ["## Description", "## About", "## Overview", "# Description", "# About"]:
+                        match = re.search(f"{section_header}\\s*([\\s\\S]*?)(?:^#|$)", content, re.MULTILINE)
+                        if match:
+                            description = match.group(1).strip()
+                            # Clean up the description - remove markdown formatting
+                            description = re.sub(r'(\*\*|\*|__|_)', '', description)
+                            # Limit length to avoid excessively long descriptions
+                            if len(description) > 500:
+                                description = description[:497] + "..."
+                            return description
+                    
+                    # If no description section found, use the first paragraph
+                    paragraphs = re.split(r'\n\s*\n', content)
+                    if paragraphs:
+                        first_para = paragraphs[0].strip()
+                        if first_para and not first_para.startswith('#'):
+                            first_para = re.sub(r'(\*\*|\*|__|_)', '', first_para)
+                            # Limit length
+                            if len(first_para) > 300:
+                                first_para = first_para[:297] + "..."
+                            return first_para
+            except Exception as e:
+                print(f"  Error reading README.md: {e}")
+    
+    return "No description available"
+
+
 def load_dependency_mapping():
     """Load dependency mapping from a local file if exists."""
     mapping_file = "dependency_mapping.csv"
@@ -1077,17 +1119,17 @@ def process_repositories(repositories):
     
     # Load dependency mapping if exists
     dependency_map = load_dependency_mapping()
+    normalized_map = {}
     
     # Convert all keys to lowercase for case-insensitive matching
-    normalized_dependency_map = {}
     if dependency_map:
         for key, value in dependency_map.items():
             normalized_key = key.lower()
-            normalized_dependency_map[normalized_key] = value
+            normalized_map[normalized_key] = value
             print(f"  Normalized mapping: {key} -> {normalized_key}")
         
         # Replace original with normalized version
-        dependency_map = normalized_dependency_map
+        dependency_map = normalized_map
         
         print("Available mappings:")
         for key in dependency_map.keys():
@@ -1101,6 +1143,10 @@ def process_repositories(repositories):
             
             # Clone the repository
             if clone_repository(repo_url, repo_dir):
+                # Extract repository description from README.md
+                repo_description = extract_repo_description(repo_dir)
+                print(f"  Repository description: {repo_description[:100]}...")
+                
                 # Determine repository types
                 repo_types = determine_repo_types(repo_dir)
                 print(f"  Detected types: {', '.join(repo_types) if repo_types else 'None'}")
@@ -1131,7 +1177,7 @@ def process_repositories(repositories):
                 license_info = identify_license(repo_dir)
                 print(f"  Repository license: {license_info}")
                 
-                # Get license info and URLs for dependencies (limited to avoid API rate limits)
+                # Get license info and URLs for dependencies
                 dependency_licenses = {}
                 dependency_urls = {}
                 for dep_type, deps in dependencies.items():
@@ -1144,23 +1190,15 @@ def process_repositories(repositories):
                             break
                         
                         license_key = f"{dep_type}:{dep}"
-                        # Pass dependency_map to the fetch functions
-                        license_result = fetch_dependency_license(dep, dep_type, version, dependency_map)
-                        url_result = fetch_dependency_url(dep, dep_type, version, dependency_map)
-                        
-                        # Debug info for dependencies in mapping file
-                        debug_key = f"{dep_type.lower()}:{dep.lower()}"
-                        if any(debug_key == map_key.lower() for map_key in dependency_map.keys()):
-                            print(f"  Applying mapping for: {license_key} -> License: {license_result}, URL: {url_result}")
-                        
-                        dependency_licenses[license_key] = license_result
-                        dependency_urls[license_key] = url_result
+                        dependency_licenses[license_key] = fetch_dependency_license(dep, dep_type, version, dependency_map)
+                        dependency_urls[license_key] = fetch_dependency_url(dep, dep_type, version, dependency_map)
                         count += 1
                 
                 results.append({
                     'repository': repo_url,
                     'types': repo_types,
                     'license': license_info,
+                    'description': repo_description,
                     'dependencies': dependencies,
                     'dependency_licenses': dependency_licenses,
                     'dependency_urls': dependency_urls
@@ -1293,11 +1331,13 @@ def generate_markdown_report(results, output_file):
             repo_name = os.path.basename(repo_url)
             repo_types = ', '.join(repo_result['types'])
             repo_license = repo_result['license']
+            repo_description = repo_result.get('description', 'No description available')
             
             mdfile.write(f"## {repo_name}\n\n")
             mdfile.write(f"- **Repository URL**: {repo_url}\n")
             mdfile.write(f"- **Types**: {repo_types}\n")
             mdfile.write(f"- **License**: {repo_license}\n")
+            mdfile.write(f"- **Description**: {repo_description}\n")
             mdfile.write("- **Note**: Dependencies marked with '!' are from manual mapping\n\n")
             
             if repo_result['dependencies']:
