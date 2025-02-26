@@ -1,0 +1,71 @@
+dependency_name,dependency_type,version,license,documentation_url
+@codemirror/lang-json,javascript,^6.0.1,MIT license,https://github.com/codemirror/lang-json
+@codemirror/language,javascript,^6.10.2,MIT License,https://github.com/codemirror/language
+@eslint/js,javascript,^9.11.1,MIT License,https://github.com/eslint/eslint
+@pulumi/azure-native,javascript,^2.0.0,Apache-2.0 license,https://github.com/pulumi/pulumi-azure-native
+@pulumi/command,javascript,^1.0.1,Apache-2.0 license,https://github.com/pulumi/pulumi-command
+@pulumi/pulumi,javascript,^3.113.0,Apache-2.0 license,https://github.com/pulumi/pulum
+@pulumi/tls,javascript,^5.0.3,Apache-2.0 license,https://github.com/pulumi/pulumi-tls
+@storybook/blocks,javascript,^8.1.11,MIT License,https://github.com/storybookjs/storybook
+@storybook/react-vite,javascript,^8.1.11,MIT License,https://github.com/storybookjs/storybook
+@storybook/react,javascript,^8.1.11,MIT License,https://github.com/storybookjs/storybook
+@storybook/test,javascript,^8.1.11,MIT License,https://github.com/storybookjs/storybook
+@types/eslint__js,javascript,^8.42.3,MIT License,https://www.npmjs.com/package/@types/eslint__js
+@types/lodash,javascript,^4.17.7,MIT License,https://github.com/DefinitelyTyped/DefinitelyTyped
+@types/node-jose,javascript,^1.1.13,MIT License,https://github.com/DefinitelyTyped/DefinitelyTyped
+@types/node,javascript,^18,MIT license,https://github.com/DefinitelyTyped/DefinitelyTyped
+@types/react-dom,javascript,^18.3.0,MIT License,https://github.com/DefinitelyTyped/DefinitelyTyped
+@types/react,javascript,^18.3.3,MIT License,https://github.com/DefinitelyTyped/DefinitelyTyped
+@typescript-eslint/eslint-plugin,javascript,^7.15.0,MIT license,https://github.com/typescript-eslint/typescript-eslint
+@typescript-eslint/parser,javascript,^7.15.0, MIT license,https://github.com/typescript-eslint/typescript-eslint
+@uidotdev/usehooks,javascript,^2.4.1,MIT License,https://github.com/uidotdev/usehooks
+@uiw/codemirror-theme-okaidia,javascript,^4.22.2,MIT License,https://github.com/uiwjs/react-codemirror
+@uiw/codemirror-theme-vscode,javascript,^4.23.0,MIT License,https://github.com/uiwjs/react-codemirror
+@uiw/react-codemirror,javascript,^4.23.0,MIT License,https://github.com/uiwjs/react-codemirror
+@vitejs/plugin-react,javascript,^4.3.1,MIT License,https://github.com/vitejs/vite-plugin-react
+base32,javascript,^0.0.7,MIT License,https://github.com/agnoster/base32-js
+bulma-checkbox,javascript,^1.2.1,MIT License,https://github.com/jgthms/bulma
+bulma-radio,javascript,^1.2.0,MIT License,https://github.com/jgthms/bulma
+bulma,javascript,^1.0.1,MIT License,https://github.com/jgthms/bulma
+com.fasterxml.jackson.core:jackson-core,java,detected-from-import,Apache License 2.0,https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
+coverlet.collector,dotnet,3.1.2,MIT License,https://github.com/coverlet-coverage/coverlet
+dayjs,javascript,^1.11.13,MIT License,https://github.com/iamkun/dayjs/
+eslint-plugin-react-hooks,javascript,^4.6.2,MIT license,https://github.com/eslint/eslint
+eslint-plugin-react-refresh,javascript,^0.4.7,MIT license,https://github.com/eslint/eslint
+eslint-plugin-react,javascript,^7.37.0,MIT license,https://github.com/eslint/eslint
+eslint-plugin-security,javascript,^3.0.1,MIT license,https://github.com/eslint/eslint
+eslint,javascript,^8.57.0,MIT license,https://github.com/eslint/eslint
+immer,javascript,^10.1.1,MIT kicense,https://github.com/immerjs/immer
+io.jsonwebtoken:jjwt,java,detected-from-import,Apache License 2.0,https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt
+js-sha256,javascript,^0.11.0,MIT license,https://github.com/emn178/js-sha256
+lodash,javascript,^4.17.21,Creative Commons Zero (CC0),https://github.com/lodash/lodash
+Microsoft.NET.Test.Sdk,dotnet,17.3.2,MIT license,https://www.nuget.org/packages/Microsoft.NET.Test.Sdk
+NJsonSchema,dotnet,11.0.2,MIT License,https://www.nuget.org/packages/NJsonSchema
+org.junit.jupiter:junit-jupiter-api,java,detected-from-import,Eclipse Public License 2.0,https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
+org.springframework:spring-core,java,detected-from-import,Apache License 2.0,https://mvnrepository.com/artifact/org.springframework/spring-core
+prettier,javascript,^3.3.3,MIT License,https://github.com/prettier/prettier
+random-name,javascript,^0.1.2,MIT License,https://github.com/jsflor/random-names
+react-dom,javascript,^18.3.1,MIT License,https://github.com/facebook/react
+react-router-dom,javascript,^6.26.2,MIT License,https://github.com/facebook/react
+react-spinners,javascript,^0.14.1,MIT License,https://github.com/facebook/react
+react,javascript,^18.3.1,MIT License,https://github.com/facebook/react
+rimraf,javascript,^5.0.0,ISC License,https://github.com/isaacs/rimraf
+storybook,javascript,^8.1.11,MIT License,https://github.com/storybookjs/storybook
+System.IdentityModel.Tokens.Jwt,dotnet,8.2.0,MIT license,https://www.nuget.org/packages/System.IdentityModel.Tokens.Jwt
+typescript-eslint,javascript,^8.3.0,MIT License,https://github.com/typescript-eslint/typescript-eslint
+typescript,javascript,^5.0.0,Apache-2.0 license,https://github.com/microsoft/TypeScript
+use-immer,javascript,^0.10.0,MIT License,https://github.com/immerjs/use-immer
+use-local-storage,javascript,^3.0.0,MIT License,https://github.com/nas5w/use-local-storage
+usehooks-ts,javascript,^3.1.0,MIT License,https://github.com/juliencrn/usehooks-ts
+uuidv7,javascript,^1.0.1,Apache-2.0 license,https://github.com/LiosK/uuidv7
+vite-plugin-dts,javascript,^3.9.1,MIT license,https://github.com/vitejs/vite
+vite-plugin-lib-inject-css,javascript,^2.1.1,MIT license,https://github.com/vitejs/vite
+vite-plugin-svgr,javascript,^4.2.0,MIT license,https://github.com/vitejs/vite
+vite,javascript,^5.3.2,MIT license,https://github.com/vitejs/vite
+xunit.runner.visualstudio,dotnet,2.4.5,Apache-2.0 license,https://www.nuget.org/packages/xunit.runner.visualstudio
+Microsoft.IdentityModel.Tokens,dotnet,8.2.0,MIT license,https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet
+MinVer,dotnet,6.0.0,Apache-2.0 license,https://github.com/adamralph/minver
+Newtonsoft.Json,dotnet,13.0.3,MIT license,https://github.com/JamesNK/Newtonsoft.Json
+xunit,dotnet,2.4.2,Apache-2.0 license,https://github.com/xunit/xunit
+np,javascript,^10.0.6,MIT license,https://github.com/sindresorhus/np
+globals,javascript,^15.9.0,MIT license,https://github.com/sindresorhus/globals
