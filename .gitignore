@@ -1,0 +1,4 @@
+# Python specific
+venv/
+*.pyc
+__pycache__
