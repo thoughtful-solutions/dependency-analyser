@@ -2,3 +2,7 @@
 venv/
 *.pyc
 __pycache__
+#github-dependency-analyzer.py reports
+dependency_report.csv
+dependency_report.md
+missing-dependency-mapping.csv
