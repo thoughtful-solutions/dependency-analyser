@@ -6,3 +6,4 @@ __pycache__
 dependency_report.csv
 dependency_report.md
 missing-dependency-mapping.csv
+infrastructure_report.md
