@@ -1,0 +1,23 @@
+# GitHub Repository URLs to analyze
+# One URL per line, lines starting with # are ignored
+# Example:
+# https://github.com/user/repo
+
+https://github.com/SelectIDLtd/AuditServer
+https://github.com/SelectIDLtd/core-inf
+https://github.com/SelectIDLtd/TrustServer
+https://github.com/SelectIDLtd/rp-sdk-dotnet
+https://github.com/SelectIDLtd/rp-example-nodejs-azure
+https://github.com/SelectIDLtd/react-idp-selector
+https://github.com/SelectIDLtd/rp-test-tool
+https://github.com/SelectIDLtd/bff-example
+https://github.com/SelectIDLtd/refidp
+https://github.com/SelectIDLtd/id_token_generator
+https://github.com/SelectIDLtd/rp-sdk-java
+https://github.com/SelectIDLtd/rp-example-java
+https://github.com/SelectIDLtd/rp-example-nodejs-aws
+https://github.com/SelectIDLtd/audit-reporting
+https://github.com/SelectIDLtd/rp-sdk-nodejs
+https://github.com/SelectIDLtd/rp-sdk-nodejs-aws
+https://github.com/SelectIDLtd/rp-sdk-nodejs-azure
+https://github.com/SelectIDLtd/RPaaS
